@@ -1,9 +1,10 @@
 import { Job } from "@/types/job";
 import Tag from "./Tag";
+import { motion } from "framer-motion";
 
 export default function JobCard({ job }: { job: Job }) {
   return (
-    <article className="rounded-2xl border p-4 hover:shadow-sm transition">
+    <motion.article className="rounded-2xl border p-4 hover:shadow-sm transition">
       <div className="flex items-start gap-3">
         {/* Logo */}
         <div className="size-12 shrink-0 rounded-xl bg-gray-100 overflow-hidden flex items-center justify-center">
@@ -34,7 +35,7 @@ export default function JobCard({ job }: { job: Job }) {
           <div className="mt-3 flex items-center justify-between">
             <span className="text-sm font-medium">{job.salary ?? "—"}</span>
             <a
-              href={`/#`} // replace with details page later
+              href={`/jobs/${job.id}`} // replace with details page later
               className="text-sm underline underline-offset-4"
             >
               View details
@@ -44,6 +45,6 @@ export default function JobCard({ job }: { job: Job }) {
           <p className="mt-2 text-xs text-gray-500">Posted on {job.postedAt}</p>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

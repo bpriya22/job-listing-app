@@ -9,12 +9,12 @@ type FiltersProps = {
 
 export default function Filters({ location, type, minSalary, onChange }: FiltersProps) {
   return (
-    <div className="flex flex-wrap gap-4 rounded-xl border bg-gray-50 p-4">
+    <div className="flex flex-wrap gap-4 rounded-xl border bg-gray-50 p-4 ">
       {/* Location */}
       <select
         value={location}
         onChange={(e) => onChange({ location: e.target.value, type, minSalary })}
-        className="rounded-lg border px-3 py-2 text-sm"
+        className="rounded-lg border px-3 py-2 text-sm "
       >
         <option value="">All Locations</option>
         <option value="Bengaluru">Bengaluru</option>
